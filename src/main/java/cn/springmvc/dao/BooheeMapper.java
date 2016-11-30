@@ -1,9 +1,9 @@
-package mapper;
+package cn.springmvc.dao;
 
+import cn.springmvc.model.Boohee;
+import cn.springmvc.model.BooheeExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import pojo.Boohee;
-import pojo.BooheeExample;
 
 public interface BooheeMapper {
     int countByExample(BooheeExample example);

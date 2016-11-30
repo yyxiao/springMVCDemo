@@ -1,4 +1,4 @@
-package pojo;
+package cn.springmvc.model;
 
 import java.util.ArrayList;
 import java.util.List;

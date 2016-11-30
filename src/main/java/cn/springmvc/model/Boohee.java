@@ -1,37 +1,20 @@
 package cn.springmvc.model;
 
-/**
- * Boohee
- * cn.springmvc.model
- *
- * @author xiaoyy
- * @description
- * @create 2016-11-28 下午5:19
- * The word 'impossible' is not in my dictionary.
- */
 public class Boohee {
     private String taskid;
 
     private String url;
 
-    private Result result;
+    private Double updatetime;
 
-
-    public void setTaskid(String taskid) {
-        this.taskid = taskid;
-    }
+    private byte[] result;
 
     public String getTaskid() {
-
         return taskid;
     }
 
-    public Result getResult() {
-        return result;
-    }
-
-    public void setResult(Result result) {
-        this.result = result;
+    public void setTaskid(String taskid) {
+        this.taskid = taskid == null ? null : taskid.trim();
     }
 
     public String getUrl() {
@@ -39,6 +22,22 @@ public class Boohee {
     }
 
     public void setUrl(String url) {
-        this.url = url;
+        this.url = url == null ? null : url.trim();
+    }
+
+    public Double getUpdatetime() {
+        return updatetime;
+    }
+
+    public void setUpdatetime(Double updatetime) {
+        this.updatetime = updatetime;
+    }
+
+    public byte[] getResult() {
+        return result;
+    }
+
+    public void setResult(byte[] result) {
+        this.result = result;
     }
 }
