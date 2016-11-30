@@ -5,6 +5,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * HelloController
  * cn.springmvc.controller
@@ -16,10 +18,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/hello")
 public class HelloController {
     @RequestMapping(method = RequestMethod.GET)
-    public String printWelcome(ModelMap modelMap){
+    public String printWelcome(HttpServletRequest request, ModelMap modelMap){
+        String code = request.getParameter("code");
         modelMap.addAttribute("message", "Hello world");
         return "index";
     }
