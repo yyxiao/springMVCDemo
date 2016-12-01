@@ -1,10 +1,13 @@
 package cn.springmvc.controller;
 
+import cn.springmvc.model.City;
+import cn.springmvc.service.CityService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
@@ -20,9 +23,14 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 @RequestMapping("/hello")
 public class HelloController {
+    @Resource
+    private CityService cityService;
+
     @RequestMapping(method = RequestMethod.GET)
     public String printWelcome(HttpServletRequest request, ModelMap modelMap){
         String code = request.getParameter("code");
+        City city = cityService.getCityByCode(code);
+        modelMap.addAttribute("city", city);
         modelMap.addAttribute("message", "Hello world");
         return "index";
     }

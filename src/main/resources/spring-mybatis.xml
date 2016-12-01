@@ -18,7 +18,7 @@
     </bean>
 
     <!-- 配置数据源 -->
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
           destroy-method="close">
         <property name="driverClassName" value="${driverClasss}"/>
         <property name="url" value="${jdbcUrl}"/>
@@ -28,8 +28,6 @@
         <property name="initialSize" value="${initialSize}"></property>
         <!-- 连接池最大数量 -->
         <property name="maxActive" value="${maxActive}"></property>
-        <!-- 连接池最大空闲 -->
-        <property name="maxIdle" value="${maxIdle}"></property>
         <!-- 连接池最小空闲 -->
         <property name="minIdle" value="${minIdle}"></property>
         <!-- 获取连接最大等待时间 -->
