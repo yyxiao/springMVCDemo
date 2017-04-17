@@ -13,9 +13,9 @@
         </commentGenerator>
         <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/test?characterEncoding=UTF-8"
-                        userId="root"
-                        password="root">
+                        connectionURL="jdbc:mysql://192.168.1.227:3306/dev_saas?characterEncoding=UTF-8"
+                        userId="edu_user"
+                        password="123456">
         </jdbcConnection>
 
         <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和
@@ -46,11 +46,13 @@
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
         <!-- 指定数据库表 要生成哪些表-->
-        <table tableName="boohee"></table>
-        <table schema="general" tableName="city" domainObjectName="City"
-               enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" selectByExampleQueryId="false" >
-            <property name="useActualColumnNames" value="true"/>
+        <table tableName="dev_saas"></table>
+        <!--<table schema="general" tableName="city" domainObjectName="City"-->
+               <!--enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+               <!--enableSelectByExample="false" selectByExampleQueryId="false" >-->
+            <!--<property name="useActualColumnNames" value="true"/>-->
+        <!--</table>-->
+        <table schema="general" tableName="t_pro_supplier_material" domainObjectName="ProSupplierMaterial">
         </table>
 
         <!-- 有些表的字段需要指定java类型
